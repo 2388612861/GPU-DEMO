@@ -1,0 +1,56 @@
+﻿  Compiling CUDA source file kernel.cu...
+  Compiling CUDA source file MatrixTranspose.cu...
+  
+  F:\CDUAtest\MatrixTranspose\MatrixTranspose>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\include"  -G   --keep-dir x64\Debug  -maxrregcount=0    --machine 64 --compile -cudart static  -g  -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_WINDLL -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -Xcompiler "/Fdx64\Debug\vc143.pdb" -o F:\CDUAtest\MatrixTranspose\MatrixTranspose\x64\Debug\kernel.cu.obj "F:\CDUAtest\MatrixTranspose\MatrixTranspose\kernel.cu" 
+  
+  F:\CDUAtest\MatrixTranspose\MatrixTranspose>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\include"  -G   --keep-dir x64\Debug  -maxrregcount=0    --machine 64 --compile -cudart static  -g  -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_WINDLL -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -Xcompiler "/Fdx64\Debug\vc143.pdb" -o F:\CDUAtest\MatrixTranspose\MatrixTranspose\x64\Debug\MatrixTranspose.cu.obj "F:\CDUAtest\MatrixTranspose\MatrixTranspose\MatrixTranspose.cu" 
+F:\CDUAtest\MatrixTranspose\MatrixTranspose\MatrixTranspose.cu(1): warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+F:\CDUAtest\MatrixTranspose\MatrixTranspose\MatrixTranspose.cu(10): error : identifier "x" is undefined
+        if (x < width && y < height) {
+            ^
+  
+F:\CDUAtest\MatrixTranspose\MatrixTranspose\MatrixTranspose.cu(34): error : expected a ";"
+    int main() {
+               ^
+  
+F:\CDUAtest\MatrixTranspose\MatrixTranspose\MatrixTranspose.cu(49): warning #12-D: parsing restarts here after previous syntax error
+        float* d_input;
+                      ^
+  
+  Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+  
+F:\CDUAtest\MatrixTranspose\MatrixTranspose\MatrixTranspose.cu(52): error : identifier "d_input" is undefined
+        cudaMalloc(&d_input, size);
+                    ^
+  
+F:\CDUAtest\MatrixTranspose\MatrixTranspose\MatrixTranspose.cu(52): error : identifier "size" is undefined
+        cudaMalloc(&d_input, size);
+                             ^
+  
+F:\CDUAtest\MatrixTranspose\MatrixTranspose\MatrixTranspose.cu(79): error : identifier "h_output_shared" is undefined
+        cudaMemcpy(h_output_shared, d_output_shared, size, cudaMemcpyDeviceToHost);
+                   ^
+  
+F:\CDUAtest\MatrixTranspose\MatrixTranspose\MatrixTranspose.cu(84): error : identifier "h_output" is undefined
+            if (h_output[i] != h_output_shared[i]) {
+                ^
+  
+F:\CDUAtest\MatrixTranspose\MatrixTranspose\MatrixTranspose.cu(96): error : identifier "h_input" is undefined
+        free(h_input);
+             ^
+  
+F:\CDUAtest\MatrixTranspose\MatrixTranspose\MatrixTranspose.cu(97): error : identifier "h_output" is undefined
+        free(h_output);
+             ^
+  
+F:\CDUAtest\MatrixTranspose\MatrixTranspose\MatrixTranspose.cu(103): error : return value type does not match the function type
+        return 0;
+               ^
+  
+  9 errors detected in the compilation of "F:/CDUAtest/MatrixTranspose/MatrixTranspose/MatrixTranspose.cu".
+CUDACOMPILE : nvcc warning : Support for offline compilation for architectures prior to '<compute/sm/lto>_75' will be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+  MatrixTranspose.cu
+C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft\VC\v170\BuildCustomizations\CUDA 12.9.targets(801,9): error MSB3721: 命令“"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Tools\MSVC\14.44.35207\bin\HostX64\x64" -x cu   -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.9\include"  -G   --keep-dir x64\Debug  -maxrregcount=0    --machine 64 --compile -cudart static  -g  -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_WINDLL -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -Xcompiler "/Fdx64\Debug\vc143.pdb" -o F:\CDUAtest\MatrixTranspose\MatrixTranspose\x64\Debug\MatrixTranspose.cu.obj "F:\CDUAtest\MatrixTranspose\MatrixTranspose\MatrixTranspose.cu"”已退出，返回代码为 2。
+CUDACOMPILE : nvcc warning : Support for offline compilation for architectures prior to '<compute/sm/lto>_75' will be removed in a future release (Use -Wno-deprecated-gpu-targets to suppress warning).
+  kernel.cu
+  tmpxft_00005b5c_00000000-7_kernel.cudafe1.cpp
